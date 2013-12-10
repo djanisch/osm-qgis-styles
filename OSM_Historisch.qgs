@@ -23,7 +23,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="true" activeLayer="roads20131119080027002">
+    <legend updateDrawingOrder="true" activeLayer="natural20131119112821937">
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="roads" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="roads20131119080027002" visible="1"/>
@@ -115,7 +115,7 @@
                         <fontColor red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="210" x="0" transparency="0" y="0" rotation="0" height="148" positionMode="0" frame="false" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="3.28188" uuid="{fdc012a6-c904-4e30-a67f-323aa9a86060}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="210" x="0" transparency="0" y="0" rotation="0" height="148" positionMode="0" frame="false" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="4.27014" uuid="{fdc012a6-c904-4e30-a67f-323aa9a86060}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="239" blue="202" green="239"/>
                 </ComposerItem>
@@ -177,7 +177,7 @@
                         <fontColor red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="222" x="-12" transparency="0" y="-12" rotation="0" height="160" positionMode="0" frame="false" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="3.28188" uuid="{d4253886-bd6b-4476-90d2-37990362d11e}" id="" background="true" blendMode="0" positionLock="true">
+                <ComposerItem width="222" x="-12" transparency="0" y="-12" rotation="0" height="160" positionMode="0" frame="false" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="4.27014" uuid="{d4253886-bd6b-4476-90d2-37990362d11e}" id="" background="true" blendMode="0" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="239" blue="202" green="239"/>
                 </ComposerItem>
@@ -486,7 +486,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>natural20131119112821937</id>
             <datasource>./natural.shp</datasource>
             <title></title>
@@ -510,7 +510,11 @@
             <provider encoding="System">ogr</provider>
             <previewExpression></previewExpression>
             <vectorjoins/>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
+            <renderer-v2 symbollevels="0" type="RuleRenderer">
+                <rules>
+                    <rule filter=" &quot;type&quot; in ( 'forest' , 'park' )" symbol="0" label="Wald"/>
+                    <rule filter=" &quot;type&quot; in ( 'riverbank' , 'water' )" symbol="1" label="Wasser"/>
+                </rules>
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
@@ -524,9 +528,19 @@
                             <prop k="width_border" v="0.26"/>
                         </layer>
                     </symbol>
+                    <symbol alpha="1" type="fill" name="1">
+                        <layer pass="1" class="SimpleFill" locked="0">
+                            <prop k="border_width_unit" v="MM"/>
+                            <prop k="color" v="157,184,209,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="no"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
                 </symbols>
-                <rotation field=""/>
-                <sizescale field="" scalemethod="area"/>
             </renderer-v2>
             <customproperties>
                 <property key="labeling" value="pal"/>
